@@ -6,10 +6,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/index.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery.ripples-min.js"></script>
   <title>Dental</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  
+  <div data-barba="wrapper">
+    <div class="header">
+      <a href="" class="logo"><img src="img/logo.png" alt="logo" width="40px" height="40px"></a>
+      <span>white Dental Clinic.</span>
+    </div>
+    <div class="menu" id="menu-btn">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="lists" id="lists">
+      <div class="list">
+        <ul>
+          <li><a href="#" onmouseenter="changeImage('img/top01.jpeg')">About</a></li>
+          <li><a href="#" onmouseenter="changeImage('img/top02.jpeg')">concept</a></li>
+          <li><a href="#" onmouseenter="changeImage('img/top03.jpeg')">product</a></li>
+          <li><a href="#" onmouseenter="changeImage('img/top04.jpeg')">service</a></li>
+        </ul>
+      </div>
+      <div class="listImage">
+        <img src="img/top01.jpeg" alt="image of menu" id="slider">
+      </div>
+    </div>
+    <div class="common-wrapper home-wrapper">
+      <div class="container home-container" data-barba="container" data-barba-namespace="home">
+        <div class="home-capture">
+          <span>Copyright ©white dental Clinic.<br>All Rights Reserved.</span>
+          <h3>もっと自由に笑いたい</h3>
+          <h1>We want to laugh</h1>
+          <h1>more freely</h1>
+        </div>
+        <div class="reserve-bannar">
+          <p><a href="">予約はこちらから</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.6/dist/barba.umd.min.js" crossOrigin></script>
+  <script>
+    barba.init({})
+  </script>
+  <script>
+    $(".home-container").ripples({
+      resolution: 500,
+      dropRadius: 15,
+      perturbance: 30,
+    });
+  </script>
+  <script>
+    function changeImage(anything) {
+      document.getElementById('slider').src = anything;
+    }
+  </script>
   <script src="js/gsap.js"></script>
   <script src="js/index.js"></script>
 </body>
