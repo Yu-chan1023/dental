@@ -1,0 +1,43 @@
+:root {
+  /* --a-color: #f5b09b;
+  --b-color: #e7b564;
+  --c-color: #a3b1b4;
+  --d-color: #5b8f8f; */
+  --en-font: 'Playfair Display', serif;
+  --ja-font: 'Shippori Mincho', serif;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+  font-family: var(--ja-font);
+  color: #fff;
+}
+html,body,h1,h2,h3,h4,h5,h6,p,span,ul,li,a,dd,dt,dl,input,textarea {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+img {
+	vertical-align: top;
+}
+li {
+  list-style-type: none;
+}
+.pc {
+	display: block !important;
+}
+.sp {
+	display: none !important;
+}
+
+@media all and (max-width: 768px) {
+	.pc {
+		display: none !important;
+	}
+	.sp {
+		display: block !important;
+	}
+}
