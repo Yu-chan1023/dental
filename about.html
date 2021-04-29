@@ -6,23 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/about.css">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="js/jquery.ripples-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
   <title>Dental</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
 </head>
 <body>
   <div data-barba="wrapper">
-    <div class="loading-wrapper">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
     <div class="header">
       <a href="" class="logo"><img src="img/logo.png" alt="logo" width="40px" height="40px"></a>
       <span>white Dental Clinic.</span>
@@ -36,42 +29,49 @@
       <div class="list">
         <ul>
           <li><a href="index.html" onmouseenter="changeImage('img/top01.jpeg')" onmouseout="fadeOut()">Home</a></li>
-          <li><a href="about.html" onmouseenter="changeImage('img/top01.jpeg')" onmouseout="fadeOut()">About</a></li>
+          <li><a href="about.html" onmouseenter="changeImage('img/top05.jpg')" onmouseout="fadeOut()">About</a></li>
           <li><a href="#" onmouseenter="changeImage('img/top02.jpeg')" onmouseout="fadeOut()">concept</a></li>
           <li><a href="#" onmouseenter="changeImage('img/top03.jpeg')" onmouseout="fadeOut()">product</a></li>
           <li><a href="#" onmouseenter="changeImage('img/top04.jpeg')" onmouseout="fadeOut()">service</a></li>
         </ul>
       </div>
       <div class="listImage">
-        <img src="img/top01.jpeg" alt="image of menu" id="slider">
+        <img src="img/top01.jpeg" alt="images of menu" id="slider">
         <div class="overlay"></div>
       </div>
     </div>
-    <div class="common-wrapper home-wrapper">
-      <div class="home-container container" data-barba="container" data-barba-namespace="home">
-        <div class="home-capture">
-          <span>Copyright ©white dental Clinic.<br>All Rights Reserved.</span>
-          <div><h3>もっと自由に笑いたい</h3></div>
-          <div><h1>We want to laugh</h1></div>
-          <div><h1>more freely</h1></div>
+    <div class="common-wrapper about-wrapper">
+      <div class="about-container" data-barba="container" data-barba-namespace="about">
+        <div class="text-slider">
+          <h1>Life wins those who laugh.</h1>
+          <h1>Life wins those who laugh.</h1>
         </div>
-        <div class="reserve-bannar">
-          <p><a href="">予約はこちらから</a></p>
+        <div class="about-message">
+          <p>
+            私たちWite Dental Clinic は「自信をもって笑えない」。<br>
+            そんな悩みを抱える皆様の解決を手助けします。<br>
+            <br>
+            人生の幸福度は笑った数で決まると言われています。<br>
+            皆さんは笑うことで生じる幸福度の価値をご存知でしょうか。<br>
+            大爆笑するのと220万円を貰うのとでは、同じ幸福度が脳波に流れるそうです。<br>
+            <br>
+            歯並び、矯正、銀歯など歯に対して抱える悩みは様々です。<br>
+            様々な悩みから、幸せな感情に自ら蓋をするのはもったいなくないでしょうか。<br>
+            好きな時に自由に自信を持って笑える未来を一緒に創りましょう。<br>
+          </p>
         </div>
       </div>
+      <div class="page-overlay">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="page-head"><h2>about</h2></div>
     </div>
   </div>
-  <script src="https://unpkg.com/@barba/core"></script>
-  <script type="text/javascript">
-    barba.init();
-  </script>
-  <script>
-    $(".home-container").ripples({
-      resolution: 500,
-      dropRadius: 15,
-      perturbance: 30,
-    });
-  </script>
+
   <script>
     function changeImage(anything) {
       document.getElementById('slider').src = anything;
