@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/service.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery.ripples-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+  <title>Dental</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div data-barba="wrapper">
+    <div class="header">
+      <a href="" class="logo"><img src="img/logo.png" alt="logo" width="40px" height="40px"></a>
+      <span>white Dental Clinic.</span>
+    </div>
+    <div class="menu" id="menu-btn">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="lists" id="lists">
+      <div class="list">
+        <ul>
+          <li><a href="index.html" onmouseenter="changeImage('img/top01.jpeg')" onmouseout="fadeOut()">home</a></li>
+          <li><a href="about.html" onmouseenter="changeImage('img/top05.jpg')" onmouseout="fadeOut()">about</a></li>
+          <li><a href="service.html" onmouseenter="changeImage('img/top08.jpg')" onmouseout="fadeOut()">service</a></li>
+          <li><a href="access.html" onmouseenter="changeImage('img/top03.jpeg')" onmouseout="fadeOut()">access</a></li>
+          <li><a href="contact.html" onmouseenter="changeImage('img/top04.jpeg')" onmouseout="fadeOut()">contact</a></li>
+        </ul>
+      </div>
+      <div class="listImage">
+        <img src="img/top01.jpeg" alt="images of menu" id="slider">
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <div class="common-wrapper about-wrapper">
+      <div class="service-container" data-barba="container" data-barba-namespace="about">
+        <div class="swiper-range">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/top09.jpg" alt=""><div class="slide-contents"><h3>高性能機器</h3><p>人の技量の差を無くすために最先端の高性能機器を導入。どの担当医でも安心して治療に望めます。</p><a href="#" class="slide-link">MORE</a></div></div>
+              <div class="swiper-slide"><img src="img/top10.jpg" alt=""><div class="slide-contents"><h3>天然歯ブラシ</h3><p>天然繊維ブラシを使用した歯ブラシを販売。隙間までしっかりと磨いてくれる繊維のうねりが特徴。</p><a href="#" class="slide-link">MORE</a></div></div>
+              <div class="swiper-slide"><img src="img/top07.jpg" alt=""><div class="slide-contents"><h3>歯磨き粉</h3><p>弊社の研究チームが考案した歯磨き粉を販売しています。歯磨き粉に必要な成分の配合が完璧。</p><a href="#" class="slide-link">MORE</a></div></div>
+              <div class="swiper-slide"><img src="img/top04.jpeg" alt=""><div class="slide-contents"><h3>矯正マウスピース</h3><p>お客様一人ひとりにあった矯正マウスピースを提供します。</p><a href="#" class="slide-link">MORE</a></div></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+      <div class="page-overlay service-overlay">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="page-head"><h2>service</h2></div>
+    </div>
+  </div>
+
+  <script>
+    service = new TimelineMax(); 
+    service.to('.page-head h2', 1, {y: 0, ease: Expo.easeOut})
+         .to('.page-head h2', 1, {y: '-100%'})
+         .staggerFrom('.page-overlay span', 1, {width: '100%'}, 0.2)
+         .from('.service-container', 1, {filter: 'blur(12px)'})
+         .addLabel('service')
+         .from('.header', 2, {y: "30", opacity: 0}, 'service-=.5')
+         .from('.menu', 3, {opacity: 0}, 'service-=.5')
+  </script>
+  <script>
+    function videoUrl(hummmm) {
+      document.getElementById('move').src = hummmm;
+    }
+  </script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      loop: true,
+      autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      }
+    });
+  </script>
+  <script>
+    function changeImage(anything) {
+      document.getElementById('slider').src = anything;
+      document.getElementById('slider').classList.add('fadein');
+    }
+    function fadeOut() {
+      document.getElementById('slider').classList.remove('fadein');
+    }
+  </script>
+  <script src="js/gsap.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

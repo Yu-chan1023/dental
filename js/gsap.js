@@ -8,13 +8,15 @@ init.addLabel('init')
     .from('.reserve-bannar', 2, {x: "100"}, 'init+=.5')
     .from('.menu', 3, {opacity: 0}, 'init+=.5')
 
-about = new TimelineMax();
-about.addLabel('about')
-    .to('.page-head h2', 1, {y: 0, ease: Expo.easeOut})
-    .to('.page-head h2', 1, {y: '-100%'})
-    .staggerFrom('.page-overlay span', 1, {width: '100%'}, 0.2)
-    .from('.about-container', 1, {filter: 'blur(12px)'})
-    .from('.about-message', 1 , {opacity: '0', y: '-50px'}, 'about+=4')
-    .from('.about-message p', 1 , {opacity: '0', y: '50px'})
+// about = new TimelineMax();
+// about.addLabel('about')
+//     .to('.page-head h2', 1, {y: 0, ease: Expo.easeOut})
+//     .to('.page-head h2', 1, {y: '-100%'})
+//     .staggerFrom('.page-overlay span', 1, {width: '100%'}, 0.2)
+//     .from('.about-container', 1, {filter: 'blur(12px)'})
+//     .from('.header', 2, {y: "30", opacity: 1})
+//     .from('.menu', 3, {opacity: 1})
+//     .from('.about-message', 1 , {opacity: '0', y: '-50px'}, 'about+=4')
+//     .from('.about-message p', 1 , {opacity: '0', y: '50px'})
 
 
