@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/service.css">
+  <link rel="stylesheet" href="css/access.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery.ripples-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+  <title>Dental</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div data-barba="wrapper">
+    <div class="header">
+      <a href="" class="logo"><img src="img/logo.png" alt="logo" width="40px" height="40px"></a>
+      <span>white Dental Clinic.</span>
+    </div>
+    <div class="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <div class="menu-btn" id="menu-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="lists" id="lists">
+      <div class="list">
+        <ul>
+          <li><a href="index.html" onmouseenter="changeImage('img/top01.jpeg')" onmouseout="fadeOut()">home</a></li>
+          <li><a href="about.html" onmouseenter="changeImage('img/top05.jpg')" onmouseout="fadeOut()">about</a></li>
+          <li><a href="service.html" onmouseenter="changeImage('img/top06.jpg')" onmouseout="fadeOut()">service</a></li>
+          <li><a href="access.html" onmouseenter="changeImage('img/top09.jpg')" onmouseout="fadeOut()">access</a></li>
+          <li><a href="contact.html" onmouseenter="changeImage('img/top11.jpg')" onmouseout="fadeOut()">contact</a></li>
+          <li><a href="#" onmouseenter="changeImage('img/top02.jpeg')" onmouseout="fadeOut()">reserve</a></li>
+        </ul>
+      </div>
+      <div class="listImage">
+        <img src="img/top01.jpeg" alt="images of menu" id="slider">
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <div class="common-wrapper access-wrapper">
+      <div class="access-container" data-barba="container" data-barba-namespace="about">
+        <div class="access-range">
+          <div class="access-box">
+            <div class="address">
+              <table class="access-table">
+                <tr>
+                  <td>Access:</td>
+                  <td>東京都町田市南つくし野4-9-2</td>
+                </tr>
+                <tr>
+                  <td>Email:</td>
+                  <td>y.minami@senkyo.co</td>
+                </tr>
+                <tr>
+                  <td>Tell:</td>
+                  <td>080-3744-8311</td>
+                </tr>
+                <tr>
+                  <td>Open:</td>
+                  <td>10:00 ~ 19:00</td>
+                </tr>
+                <tr>
+                  <td>Close:</td>
+                  <td>毎週水曜 / 第三火曜</td>
+                </tr>
+              </table>
+            </div>
+            <div class="google">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3247.281055551615!2d139.47377071519676!3d35.52205164629294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f8efc040b1fd%3A0x6822a41054b6267d!2z44CSMTk0LTAwMDIg5p2x5Lqs6YO955S655Sw5biC5Y2X44Gk44GP44GX6YeO77yU5LiB55uu77yZ4oiS77ySIOOCsOODqeODs-ODieOCpeODvOODq-WNl-OBpOOBj-OBl-mHjg!5e0!3m2!1sja!2sjp!4v1619685319660!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="map-link"><a href="">map</a></div>
+            <div class="other-ball"></div>
+          </div>
+        </div>
+      </div>
+      <div class="page-overlay access-overlay">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="page-head"><h2>access</h2></div>
+    </div>
+  </div>
+
+  <script>
+    access = new TimelineMax(); 
+    access.to('.page-head h2', 1, {y: 0, ease: Expo.easeOut})
+         .to('.page-head h2', 1, {y: '-100%'})
+         .staggerFrom('.page-overlay span', 1, {width: '100%'}, 0.2)
+         .from('.access-container', 1, {filter: 'blur(12px)'})
+         .addLabel('access')
+         .from('.header', 2, {y: "30", opacity: 0}, 'access-=.5')
+         .from('.menu', 3, {opacity: 0}, 'access-=.5')
+         .from('.address', 7, {x: '300%', rotateZ: "720deg"}, 'access-=1')
+         .from('.google', 3, {x: '250%', rotateZ: "500deg"}, 'access+=1')
+         .from('.map-link', 3, {x: '400%', rotateZ: "300deg"}, 'access+=3')
+         .from('.other-ball', 3, {x: '600%', rotateZ: "100deg"}, 'access+=4')
+  </script>
+  <script>
+    function changeImage(anything) {
+      document.getElementById('slider').src = anything;
+      document.getElementById('slider').classList.add('fadein');
+    }
+    function fadeOut() {
+      document.getElementById('slider').classList.remove('fadein');
+    }
+  </script>
+  <script src="js/gsap.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

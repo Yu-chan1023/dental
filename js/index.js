@@ -16,6 +16,8 @@ $(function() {
   let btn = document.getElementById('menu-btn');
   btn.addEventListener('click', () => {
     if (open === false) {
+      $('.menu-btn div').addClass('open');
+      $('.menu-btn div').removeClass('close');
       slide = new TimelineMax();
       slide.addLabel('slide')
            .to('.lists', .8, {x: 0}, 'slide')
@@ -23,6 +25,8 @@ $(function() {
            .to('.overlay', .8, {width: "100%"}, 'slide+=1.5')
            .staggerTo('.list ul li a', 1, {y: 0}, 0.2, 'slide+=.5')
     } else {
+      $('.menu-btn div').removeClass('open');
+      $('.menu-btn div').addClass('close');
       slide = new TimelineMax();
       slide.addLabel('slide')
            .staggerTo('.list ul li a', 1, {y: 100}, 0.2, 'slide')
