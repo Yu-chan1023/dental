@@ -97,24 +97,13 @@
   top: 45%;
   left: 200px;
   transform: translateY(-50%);
-  background-color: rgba(72, 114, 252, 0.7);
   padding: 50px;
+  color: #284356;
+  font-size: 21px;
 }
-.about-message::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 100%;
-  background-image: linear-gradient(to left, rgba(72, 114, 252, 0.7) 0%, #FFF 100%);
-}
-.about-message::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 100%;
-  background-image: linear-gradient(to right, rgba(72, 114, 252, 0.7) 0%, #FFF 100%);
+.about-message span{
+  display: inline-block;
+  background-image: linear-gradient(to top, #FFF 0%, transparent 35%, transparent 100%);
+  margin-bottom: 5px;
+  padding: 5px;
 }
