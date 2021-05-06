@@ -7,6 +7,7 @@
   background-image: url(../img/top09.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 .access-overlay span {
   background-image: linear-gradient(to top, #fff1eb 0%, #f9cbac 100%);
@@ -90,4 +91,75 @@
   border-radius: 100%;
   background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   align-self: flex-end;
+}
+
+
+
+
+@media all and (max-width: 768px) {
+  .access-box {
+    display: none;
+  }
+  .access-range {
+    justify-content: none;
+  }
+  .sp-address {
+    width: 85%;
+  }
+  .access-table {
+    align-content: none;
+    justify-content: none;
+    color: #243856;
+    position: relative;
+    top: 50px;
+    padding: 20px;
+    background-color: #f9cbac;
+  }
+  .access-table::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #243856;
+  }
+  .access-table tr td {
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+  }
+  .access-table tr td:nth-of-type(1) {
+    padding-right: 0px;
+  }
+  .sp-map-link {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: #284356;
+    position: relative;
+    top: 50px;
+    overflow: hidden;
+    margin: 10px auto 0;
+  }
+  .sp-map-link a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .sp-map-link:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+  }
+  .sp-map-link:hover:before{
+    left: 100%;
+  }
 }

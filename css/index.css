@@ -22,6 +22,7 @@ home
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  overflow: hidden;
 }
 .menu {
   position: absolute;
@@ -294,11 +295,6 @@ home
 }
 .home-capture h3{
   font-family: var(--ja-font);
-  /* background-image: url(../img/top01.jpeg);
-  background-position: bottom;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;  */
   font-weight: normal;
   font-size: 1.5rem;
   margin-bottom: 30px;
@@ -334,5 +330,47 @@ home
   100% {
     opacity: 1;
     filter: blur(0px);
+  }
+}
+
+@media all and (max-width: 768px) {
+  .header {
+    top: 20px;
+    left: 20px;
+  }
+  .menu {
+    top: 20px;
+    right: 20px;
+    left: auto;
+    transform: translateY(0%);
+  }
+  .home-capture {
+    bottom: 50px;
+    left: 50px;
+  }
+  .home-capture h1{
+    font-size: 36px;
+  }
+
+  .lists {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transform: translateX(-100%);
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9;
+  }
+  .list {
+    width: 100%;
+  }
+  .list ul li {
+    font-size: 24px;
+    text-align: center;
+  }
+  .listImage {
+    display: none;
   }
 }
